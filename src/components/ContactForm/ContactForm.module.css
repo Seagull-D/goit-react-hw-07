@@ -1,0 +1,72 @@
+.formStyle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.submitBtn {
+  display: block;
+  width: 120px;
+  height: 40px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  /* Анімація при наведенні */
+}
+
+.submitBtn:hover {
+  background-color: #45a049;
+  /* Зміна кольору при наведенні */
+}
+
+.submitBtn:disabled {
+  background-color: #ccc;
+  /* Колір для вимкненої кнопки */
+  cursor: not-allowed;
+}
+
+.labelText {
+  text-align: left;
+  width: 100%;
+  /* Забезпечення того, що мітка займає всю ширину контейнера */
+  margin-bottom: 5px;
+  /* Відступ між міткою та полем вводу */
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Стилі для інпутів */
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+}

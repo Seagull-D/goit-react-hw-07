@@ -1,0 +1,63 @@
+.contactContainer {
+  display: flex;
+  justify-content: space-between;
+  /* Відстань між елементами */
+  align-items: center;
+  /* Вертикальне вирівнювання */
+  padding: 10px;
+  background-color: rgb(145, 241, 233);
+  border-radius: 15px;
+  /* Округлені краї */
+  min-width: 200px;
+  max-width: 100%;
+  width: 100%;
+  /* Відповідність ширині контейнера */
+  box-sizing: border-box;
+  /* Для включення padding у ширину */
+}
+
+.contactlist {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 10px;
+  /* Відстань між елементами списку */
+}
+
+.contactIteam {
+  display: block;
+  text-align: left;
+  justify-content: center;
+  font-size: 14px;
+  /* Для більшого комфорту */
+  color: #333;
+  /* Темний колір тексту для контрасту */
+}
+
+.contactBtn {
+  height: 30px;
+  padding: 0 10px;
+  /* Відступи по боках для кнопки */
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  /* Плавна анімація для фокусу */
+}
+
+.contactBtn:hover {
+  background-color: #45a049;
+  /* Зміна кольору при наведенні */
+}
+
+.contactBtn:disabled {
+  background-color: #ccc;
+  /* Колір для вимкненої кнопки */
+  cursor: not-allowed;
+}

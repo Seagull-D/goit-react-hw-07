@@ -1,0 +1,48 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.appStyle {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  max-width: 400px;
+
+  max-height: 100%;
+  margin: 20px auto;
+  padding: 30px 20px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  gap: 20px;
+}
+.toggleFormBtn {
+  background-color: #4caf50;
+  /* Зелене тло */
+  color: white;
+  /* Білий текст */
+  padding: 12px 24px;
+  /* Внутрішні відступи */
+  border: none;
+  /* Без рамки */
+  border-radius: 8px;
+  /* Круглі кути */
+  cursor: pointer;
+  /* Курсор у вигляді руки */
+  font-size: 16px;
+  /* Розмір шрифта */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.addContactBtn:hover {
+  background-color: #45a049;
+}
+
+.addContactBtn:active {
+  transform: scale(0.98);
+}

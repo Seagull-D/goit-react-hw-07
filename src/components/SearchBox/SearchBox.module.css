@@ -1,0 +1,27 @@
+.inputSearchIcon {
+  position: relative;
+  /* Для правильного позиціювання іконки всередині поля */
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  height: 40px;
+  padding-left: 15px;
+  /* Відступ для тексту після іконки */
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  background: url("/public/search.svg") no-repeat right 10px center;
+  background-size: 20px;
+  /* Розмір іконки */
+  padding-right: 35px;
+  /* Відступ для створення місця для іконки */
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  /* Плавна анімація для фокусу */
+}
+
+.inputSearchIcon:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  /* Легке підсвічування при фокусуванні */
+}

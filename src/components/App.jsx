@@ -6,6 +6,7 @@ import ContactList from "./ContactList/ContactList";
 import SearchBox from "./SearchBox/SearchBox";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "../redux/contactsOps";
+import { selectFilteredContacts } from "../redux/contactsSlice";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const App = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  const contactsList = useSelector((state) => state.contacts.contacts.items);
+  const contactsList = useSelector(selectFilteredContacts);
   const isFormVisible = useSelector((state) => state.visible.isFormVisible);
 
   const toggleForm = () => {

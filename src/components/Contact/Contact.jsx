@@ -2,7 +2,7 @@ import s from "./Contact.module.css";
 import { FaUser } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { deleteContac } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsOps";
 
 const Contact = ({ contactItem }) => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const Contact = ({ contactItem }) => {
       <button
         className={s.contactBtn}
         type="button"
-        onClick={() => dispatch(deleteContac(contactItem.id))}
+        onClick={() => dispatch(deleteContact(contactItem.id))}
       >
         Усунути
       </button>

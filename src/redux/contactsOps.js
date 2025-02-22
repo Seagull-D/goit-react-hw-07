@@ -35,3 +35,19 @@ export const deleteContact = createAsyncThunk(
     }
   }
 );
+
+export const addContact = createAsyncThunk(
+  "contacts/addContact",
+  async (body, thunkApi) => {
+    try {
+      const { data } = await axios.post(
+        `https://67b9f6eb51192bd378def0c5.mockapi.io/contacts`,
+        body
+      );
+      return data;
+    } catch (error) {
+      console.error(error);
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);

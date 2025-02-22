@@ -2,7 +2,7 @@ import s from "./ContactForm.module.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
 
 const ContactForm = () => {
   const contacts = useSelector((state) => state.contacts.contacts.items);
@@ -24,21 +24,9 @@ const ContactForm = () => {
       .required("поле обов'язкове"),
   });
   const handleSubmit = (values, actions) => {
-    const isCopy = contacts.some(
-      (contact) =>
-        contact.name.toLowerCase().trim() ===
-          values.name.toLowerCase().trim() && contact.phone === values.phone
-    );
-
-    if (isCopy) {
-      //setErrorMessage("Контакт із таким ім'ям або номером телефону вже існує.");
-      actions.setSubmitting(false);
-      return;
-    }
     const newConatc = {
       name: values.name,
-      phone: values.phone,
-      id: crypto.randomUUID(),
+      number: values.phone,
     };
     dispatch(addContact(newConatc));
     actions.resetForm();

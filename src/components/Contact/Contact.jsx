@@ -6,7 +6,7 @@ import { deleteContac } from "../../redux/contactsSlice";
 
 const Contact = ({ contactItem }) => {
   const dispatch = useDispatch();
-  const { name, phone } = contactItem;
+  const { name, number } = contactItem;
 
   return (
     <div className={s.contactContainer}>
@@ -15,7 +15,7 @@ const Contact = ({ contactItem }) => {
           <FaUser className={s.contactImg} /> {name}
         </li>
         <li className={s.contactItem}>
-          <BsFillTelephoneFill className={s.contactImg} /> {phone}
+          <BsFillTelephoneFill className={s.contactImg} /> {number}
         </li>
       </ul>
       <button

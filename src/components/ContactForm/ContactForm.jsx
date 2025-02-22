@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
 import { addContact } from "../../redux/contactsOps";
 
-const ContactForm = () => {
-  const contacts = useSelector((state) => state.contacts.contacts.items);
+const ContactForm = ({ closeForm }) => {
   const dispatch = useDispatch();
   const initialValues = {
     name: "",
@@ -30,6 +29,7 @@ const ContactForm = () => {
     };
     dispatch(addContact(newConatc));
     actions.resetForm();
+    closeForm();
   };
 
   return (

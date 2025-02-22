@@ -6,7 +6,9 @@ import ContactList from "./ContactList/ContactList";
 import SearchBox from "./SearchBox/SearchBox";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "../redux/contactsOps";
-import { selectFilteredContacts } from "../redux/contactsSlice";
+import { selectError, selectLoading } from "../redux/contactsSlice";
+import Loader from "./Loader/Loader";
+import ErrorMessage from "./ErrorMessage/ErrorMessage";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -14,9 +16,9 @@ const App = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  const contactsList = useSelector(selectFilteredContacts);
   const isFormVisible = useSelector((state) => state.visible.isFormVisible);
-
+  const loader = useSelector(selectLoading);
+  const error = useSelector(selectError);
   const toggleForm = () => {
     dispatch(toggleFormVisibility(), [dispatch]);
   };
@@ -24,7 +26,8 @@ const App = () => {
   return (
     <div className="appStyle">
       <h1>Телефонна книга</h1>
-      {contactsList.length > 1 && <SearchBox />}
+      {error && <ErrorMessage />}
+      <SearchBox />
       {isFormVisible ? (
         <ContactForm closeForm={toggleForm} />
       ) : (
@@ -32,6 +35,7 @@ const App = () => {
           Додати контакт
         </button>
       )}
+      {loader && <Loader />}
       <ContactList closeForm={toggleForm} />
     </div>
   );
